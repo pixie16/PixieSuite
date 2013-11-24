@@ -2,6 +2,7 @@
 // last updated: February 2010, DTM
 
 #include <iostream>
+#include <string>
 
 #include <netinet/in.h>
 
@@ -15,13 +16,13 @@
 
 // char *VME = "192.168.13.248";
 // char *VME = "192.168.100.5";
-char *VME = "127.0.0.1";
+std::string VME = "127.0.0.1";
 
 using namespace std;
 
 int main(int argc, char **argv)
 {
-  spkt_connect(VME, PROTO_DATA);
+  spkt_connect(VME.c_str(), PROTO_DATA);
   cout << "Connected to PAC-machine " << VME << endl;
 
   // open a socket for command communication
