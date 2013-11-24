@@ -267,6 +267,7 @@ int main(int argc, char **argv)
   // enter the data acquisition loop
   socket_poll(0); // clear the file descriptor set we poll
 
+
   while (!isExiting) {
     // see if we have any commands from pacman
     time_t curTime, prevTime;
@@ -500,6 +501,7 @@ int main(int argc, char **argv)
 
 	    // something is wrong
 	    BailOut(sendAlarm, alarmArgument);
+            continue;
 	  } else {
 	      word_t parseWords = beginData;
 	      word_t eventSize;
@@ -533,9 +535,9 @@ int main(int argc, char **argv)
 		     << " reading " << nWords[mod] << " words." << endl;
 		//! how to proceed from here
 		delete[] fifoData;
-
-		BailOut(sendAlarm, alarmArgument);
-	      }
+                BailOut(sendAlarm, alarmArgument);
+                continue;
+              }
 	      parseWords += eventSize;	      
 	    } while ( parseWords < dataWords + nWords[mod]);	   
 	    parseTime += usGetDTime();
@@ -548,6 +550,7 @@ int main(int argc, char **argv)
 
 		delete[] fifoData;
 		BailOut(sendAlarm, alarmArgument);
+                continue;
 	      } else {
 		// we have a deficit of words, now we must wait for the remainder
 		if ( fullFIFO ) {
@@ -594,7 +597,7 @@ int main(int argc, char **argv)
 		    if (!isQuiet)
 		      cout << endl;
 		    usleep(readPause);
-		    int testWords = pif.CheckFIFOWords(mod);
+		    pif.CheckFIFOWords(mod);
 		    if ( !pif.ReadFIFOWords(&fifoData[dataWords + nWords[mod]],
 					    waitWords[mod], mod) ) {
 		      cout << "Error reading FIFO, bailing out!" << endl;
@@ -602,8 +605,9 @@ int main(int argc, char **argv)
 
 		      delete[] fifoData;
 
+                      // something is wrong 
 		      BailOut(sendAlarm, alarmArgument);
-		      // something is wrong 
+                      continue;
 		    } else {
 		      nWords[mod] += waitWords[mod];
 		      // no longer waiting for words
@@ -845,5 +849,5 @@ void BailOut(bool sendAlarm, string arg)
     }
     system(str.str().c_str());
   }
-  exit(EXIT_FAILURE);
+  //exit(EXIT_FAILURE);
 }

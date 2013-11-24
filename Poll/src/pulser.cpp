@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <fstream>
 #include <iostream>
+#include <string>
 #include <vector>
 
 #include <cmath> // for pow
@@ -34,7 +35,7 @@ typedef uint16_t traceword_t;
 const int maxShmSizeL = 4050; // in pixie words
 const int maxShmSize  = maxShmSizeL * sizeof(word_t); // in bytes
 
-char *VME = "192.168.13.248";
+std::string VME = "192.168.13.248";
 // char *VME = "192.168.100.5";
 // const char *VME = "127.0.0.1";
 // char *VME = "192.168.1.100";
@@ -52,7 +53,7 @@ int main(int argc, char **argv)
 {
   bool quiet = false;
   bool zeroClocks = false;
-  const int listMode = LIST_MODE_RUN0; // full header w/ traces
+  //const int listMode = LIST_MODE_RUN0; // full header w/ traces
   // read the FIFO when it is this full
   const unsigned int maxEnergy = 10000;
   const traceword_t baseline = 500;
@@ -68,7 +69,7 @@ int main(int argc, char **argv)
   const unsigned int endRunPause = 100;
   const unsigned int pollPause   = 1;
   const unsigned int readPause   = 10;
-  const unsigned int waitPause   = 10;
+  //const unsigned int waitPause   = 10;
   const unsigned int pollTries   = 100;
 
   int opt;
@@ -106,7 +107,7 @@ int main(int argc, char **argv)
 
   const word_t threshWords = EXTERNAL_FIFO_LENGTH * threshPercent / 100;
 
-  spkt_connect(VME, PROTO_DATA);
+  spkt_connect(VME.c_str(), PROTO_DATA);
   cout << "Connected to PAC-machine " << VME << endl;
 
   // open a socket for command communication
@@ -481,7 +482,7 @@ int main(int argc, char **argv)
       continue;
     
     // Clear our faux FIFO
-    for (int mod=0; mod < nCards; mod++) {
+    for (unsigned int mod=0; mod < nCards; mod++) {
       nWords[mod] = 0;
     }
     spillTime = usGetTime(startTime);
