@@ -1,4 +1,26 @@
-# ignore any archives creative by make dist
-*.tgz
-# ignore any temporaries
+#The list of files for git to ignore
+#Build files
+*.o
+autom4te.cache/
+
+#Backup files from various editors
+*.save
 *~
+
+#Documentation directories and files
+html/
+latex/
+pics
+
+#DAMM files
+*.drr
+*.his
+*.list
+*.log
+
+# Data directories
+HIS
+LDF
+HIS/*
+LDF/*
+data

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="PixieSuite" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="master">
+				<Option output="PixieSuite" prefix_auto="1" extension_auto="1" />
+				<Option object_output="/home/vincent/programs/sources/PixieSuite/.objs" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Interface/Display.cpp" />
+		<Unit filename="Interface/Display.h" />
+		<Unit filename="Interface/Lock.cpp" />
+		<Unit filename="Interface/Lock.h" />
+		<Unit filename="Interface/Makefile" />
+		<Unit filename="Interface/PixieInterface.cpp" />
+		<Unit filename="Interface/PixieInterface.h" />
+		<Unit filename="Interface/TermColors.h" />
+		<Unit filename="Interface/Utility.cpp" />
+		<Unit filename="Interface/Utility.h" />
+		<Unit filename="Interface/slot_def.set" />
+		<Unit filename="Interface/test.cfg" />
+		<Unit filename="Interface/test.cpp" />
+		<Unit filename="Poll/Makefile" />
+		<Unit filename="Poll/include/Acq_Params.h" />
+		<Unit filename="Poll/include/Buffer_Structure.h" />
+		<Unit filename="Poll/include/StatsHandler.hpp" />
+		<Unit filename="Poll/include/acq_ctl.h" />
+		<Unit filename="Poll/include/orph_udp.h" />
+		<Unit filename="Poll/include/spkt_io_udp.h" />
+		<Unit filename="Poll/monitor.bash" />
+		<Unit filename="Poll/pixie.cfg" />
+		<Unit filename="Poll/send_alarm" />
+		<Unit filename="Poll/src/StatsHandler.cpp" />
+		<Unit filename="Poll/src/commtest.cpp" />
+		<Unit filename="Poll/src/poll.cpp" />
+		<Unit filename="Poll/src/pulser.cpp" />
+		<Unit filename="Poll/src/sendbuf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Poll/src/spkt_io_udp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="PxiDump/Makefile" />
+		<Unit filename="PxiDump/pxiDump.bash" />
+		<Unit filename="Setup/Makefile" />
+		<Unit filename="Setup/Makefile.mca" />
+		<Unit filename="Setup/Makefile.paw" />
+		<Unit filename="Setup/PGEN" />
+		<Unit filename="Setup/RATE" />
+		<Unit filename="Setup/RCHA" />
+		<Unit filename="Setup/READ_CONFIG" />
+		<Unit filename="Setup/RMOD" />
+		<Unit filename="Setup/WCHA" />
+		<Unit filename="Setup/WMOD" />
+		<Unit filename="Setup/basel.kumac" />
+		<Unit filename="Setup/include/DrrBlock.h" />
+		<Unit filename="Setup/include/Exceptions.h" />
+		<Unit filename="Setup/include/HisDrr.h" />
+		<Unit filename="Setup/include/utilities.h" />
+		<Unit filename="Setup/mc.kumac" />
+		<Unit filename="Setup/mca.kumac" />
+		<Unit filename="Setup/mca_input.txt" />
+		<Unit filename="Setup/pixie.cfg" />
+		<Unit filename="Setup/plotTraces" />
+		<Unit filename="Setup/plotTraces_ch" />
+		<Unit filename="Setup/plotTraces_mod" />
+		<Unit filename="Setup/sm" />
+		<Unit filename="Setup/smf" />
+		<Unit filename="Setup/smt" />
+		<Unit filename="Setup/src/HisDrr.cpp" />
+		<Unit filename="Setup/src/MCA.cpp" />
+		<Unit filename="Setup/src/adjust_offsets.cpp" />
+		<Unit filename="Setup/src/boot.cpp" />
+		<Unit filename="Setup/src/copy_params.cpp" />
+		<Unit filename="Setup/src/csr_test.cpp" />
+		<Unit filename="Setup/src/find_tau.cpp" />
+		<Unit filename="Setup/src/get_traces.cpp" />
+		<Unit filename="Setup/src/input_whole_crate.txt" />
+		<Unit filename="Setup/src/mca_paw.cpp" />
+		<Unit filename="Setup/src/pmread.cpp" />
+		<Unit filename="Setup/src/pmwrite.cpp" />
+		<Unit filename="Setup/src/pread.cpp" />
+		<Unit filename="Setup/src/pwrite.cpp" />
+		<Unit filename="Setup/src/rate.cpp" />
+		<Unit filename="Setup/src/set_hybrid.cpp" />
+		<Unit filename="Setup/src/set_pileups_only.cpp" />
+		<Unit filename="Setup/src/set_pileups_reject.cpp" />
+		<Unit filename="Setup/src/set_standard.cpp" />
+		<Unit filename="Setup/src/toggle_catcher.cpp" />
+		<Unit filename="Setup/src/toggle_gain.cpp" />
+		<Unit filename="Setup/src/toggle_good.cpp" />
+		<Unit filename="Setup/src/toggle_pileup.cpp" />
+		<Unit filename="Setup/src/toggle_polarity.cpp" />
+		<Unit filename="Setup/src/toggle_trace.cpp" />
+		<Unit filename="Setup/src/trace.cpp" />
+		<Unit filename="Setup/src/trace_paw.cpp" />
+		<Unit filename="Setup/tra" />
+		<Unit filename="Setup/tra.kumac" />
+		<Unit filename="Setup/trc.kumac" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<lib_finder disable_auto="1" />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

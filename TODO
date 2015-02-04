@@ -1,3 +1,19 @@
-Investigate and add pause between sending UDP packets for poll.
-Break up aspects for different Pixie revisions into different files
-Implement three-phase wait-free readout
+MCA/trace library as a shared object
+-Investigate and add pause between sending UDP packets for poll.
+-Put the firmware and set files into the ldf data stream?
+-Break up aspects for different Pixie revisions into different files
+-Three Phase Readout
+  -Problem: Cannot read a single word from a buffer
+  -Solution(?) Read two words, get size, read all but last 2, read out until the
+  end.
+  -% of time waiting is an indication of if we need something like this
+
+-Short read out times can lead to chopped events in the scan, which would need
+    double buffering
+-Info readout of some module parameters(# traces, % time above threshold, etc.)
+    is slightly different for different buffers.
+-The out of range parameter can be used to find energy of saturated traces?
+
+---- PIXIE 500 ----
+Get this merged into the PixieSuite? There is a completely different API,
+    this will not be trivial.
