@@ -51,7 +51,7 @@ bool TauFinder::operator()(PixieFunctionParms<> &par)
 {
   double tau;
   
-  int errno = Pixie16TauFinder(par.mod, par.ch, &tau);
+  int errno = Pixie16TauFinder(par.mod, &tau);
   cout << "TAU: " << tau << endl;
   cout << "Errno: " << errno << endl;
 

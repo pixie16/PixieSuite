@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 {
   bool quiet = false;
   bool zeroClocks = false;
-  const int listMode = LIST_MODE_RUN0; // full header w/ traces
+  const int listMode = LIST_MODE_RUN; // full header w/ traces
   // read the FIFO when it is this full
   const unsigned int maxEnergy = 10000;
   const traceword_t baseline = 500;

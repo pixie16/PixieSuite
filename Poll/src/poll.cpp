@@ -71,7 +71,7 @@ int main(int argc, char **argv)
   string alarmArgument;
 
   // compiled-in configuration
-  const int listMode = LIST_MODE_RUN0; // full header w/ traces
+  const int listMode = LIST_MODE_RUN; // full header w/ traces
   // values associated with the minimum timing between pixie calls (in us)
   // Adjusted to help alleviate the issue with data corruption
   const unsigned int endRunPause = 500;
@@ -559,7 +559,7 @@ int main(int argc, char **argv)
 	      if (justEnded) {
 		cout << ErrorStr("Words missing at end of run.") << endl;
 
-		delete[] fifoData
+		delete[] fifoData;
 		usleep(10000);
 		BailOut(sendAlarm, alarmArgument);
 	      } else {
@@ -584,7 +584,7 @@ int main(int argc, char **argv)
 
 		  while (timeout++ < waitTries) {
 		      testWords = pif.CheckFIFOWords(mod);
-		      if ( testWords >= max(waitWords[mod], 2U) )
+		      if ( testWords >= max(waitWords[mod], 9U) )
 			  break;
 		      usleep(pollPause);
 		  }
